@@ -11,4 +11,16 @@
     <result column="edit_time" jdbcType="TIMESTAMP" property="editTime" />
     <result column="is_effitive" jdbcType="INTEGER" property="isEffitive" />
   </resultMap>
+
+  <select id="getSysRoleByUserId" resultMap="BaseResultMap">
+    SELECT
+        r.*
+    FROM
+        sys_role r
+        LEFT JOIN sys_user_role ur ON ur.role_id = r.role_id
+    WHERE
+        ur.user_id = #{userId}
+  </select>
+
+
 </mapper>
