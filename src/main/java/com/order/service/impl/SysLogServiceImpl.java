@@ -4,12 +4,11 @@ import com.order.core.support.BaseMapper;
 import com.order.core.support.BaseServiceImpl;
 import com.order.entity.SysLog;
 import com.order.mapper.SysLogMapper;
+import com.order.service.ISysLogService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.order.service.ISysLogService;
 
 @Service
 public class SysLogServiceImpl extends BaseServiceImpl<SysLog> implements ISysLogService{
@@ -21,17 +20,14 @@ public class SysLogServiceImpl extends BaseServiceImpl<SysLog> implements ISysLo
 	@Autowired
 	SysLogMapper sysLogMapper;
 	
-	@Override
 	protected BaseMapper<SysLog> getBaseMapper() {
 		return this.sysLogMapper;
 	}
 
-	@Override
 	protected String getBaseMessage() {
 		return BASE_MESSAGE;
 	}
 
-	@Override
 	protected Logger getLogger() {
 		return logger;
 	}

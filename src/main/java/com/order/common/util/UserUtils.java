@@ -4,6 +4,10 @@ import com.order.entity.SysUser;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * 用作从redis中获取用户信息
@@ -15,6 +19,14 @@ public class UserUtils {
 
 	@Autowired
 	private RedisUtil redisUtil;
+
+	public SysUser getSysUser(){
+		ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+		HttpServletRequest request = attributes.getRequest();
+		String token = request.getHeader("token");
+		return getSysUserByRedis(token);
+	}
+
 	
 	/**
 	 * 通过redis获取用户信息
