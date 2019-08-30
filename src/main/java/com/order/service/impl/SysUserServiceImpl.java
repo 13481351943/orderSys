@@ -9,9 +9,11 @@ import com.order.mapper.SysUserMapper;
 import com.order.mapper.SysUserRoleMapper;
 import com.order.service.ISysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class SysUserServiceImpl extends BaseServiceImpl<SysUser>  implements ISysUserService {
 
     @Autowired
@@ -20,19 +22,20 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUser>  implements ISy
     private SysUserRoleMapper sysUserRoleMapper;
 
 
+    @Override
     public Integer saveUser(SysUser sysUser){
         sysUser.setUserId(UUIDUtil.generateID());
         return sysUserMapper.insertSelective(sysUser);
     }
-
+    @Override
     public Integer updateUser(SysUser sysUser){
         return sysUserMapper.updateByPrimaryKey(sysUser);
     }
-
+    @Override
     public Integer delUser(String userId){
         return sysUserMapper.deleteByPrimaryKey(userId);
     }
-
+    @Override
     public Integer setUserRole(String userId, List<String> roleIds){
         for(String id : roleIds){
             SysUserRole userRole = new SysUserRole();
@@ -43,7 +46,7 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUser>  implements ISy
         }
         return 1;
     }
-
+    @Override
     public Integer removeUserRole(String userId, List<String> roleIds){
         for(String id : roleIds){
             SysUserRoleCriteria criteria = new SysUserRoleCriteria();

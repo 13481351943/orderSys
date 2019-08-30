@@ -3,6 +3,7 @@ package com.order.controller;
 import com.order.common.util.RedisUtil;
 import com.order.core.annotation.SysLogger;
 import com.order.core.support.BaseController;
+import com.order.entity.SysUser;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,9 +31,9 @@ public class TestController extends BaseController {
 	@PostMapping("/noauth/login")
 	@SysLogger(value = "登录",name = "用户登录")
 	public String login(String username) {
-//		SysUser user = new SysUser();
-//		user.setUserName(username);
-//		redisUtil.set(username, user,30*60L);
+		SysUser user = new SysUser();
+		user.setName(username);
+		redisUtil.set(username, user,30*60L);
 		return "success";
 	}
 	

@@ -6,6 +6,7 @@ import java.util.Date;
 import com.google.gson.Gson;
 import com.order.common.util.ExceptionUtil;
 import com.order.common.util.IPUtils;
+import com.order.common.util.UUIDUtil;
 import com.order.entity.SysLog;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -51,7 +52,7 @@ public class SysLogAspect {
 		try {
 			saveSysLog(point, time);
 		} catch (Exception e) {
-			logger.debug("记录日志异常：{}", ExceptionUtil.getStackTraceAsString(e));
+			logger.error("记录日志异常：{}", ExceptionUtil.getStackTraceAsString(e));
 		}
 		return result;
 	}
@@ -92,11 +93,11 @@ public class SysLogAspect {
 	
 	private SysLog createSystemLog(String userName, String methodName, String description, String name) {
 		SysLog sysLog = new SysLog();
+		sysLog.setId(UUIDUtil.generateID());
 		sysLog.setUsername(userName);
 		sysLog.setMethod(methodName);
 		sysLog.setOperation(description);
 		sysLog.setCreateDate(new Date());
-
 		return sysLog;
 	}
     
