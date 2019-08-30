@@ -1,7 +1,6 @@
 package com.order.service.impl;
 
 import com.order.common.util.UUIDUtil;
-import com.order.core.support.BaseServiceImpl;
 import com.order.entity.SysUser;
 import com.order.entity.SysUserCriteria;
 import com.order.entity.SysUserRole;
@@ -15,7 +14,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class SysUserServiceImpl extends BaseServiceImpl<SysUser>  implements ISysUserService {
+public class SysUserServiceImpl implements ISysUserService {
 
     @Autowired
     private SysUserMapper sysUserMapper;

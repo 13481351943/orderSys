@@ -1,9 +1,8 @@
 package com.order.service;
 
-import com.order.core.support.IBaseService;
 import com.order.entity.SysLog;
 
-public interface ISysLogService extends IBaseService<SysLog> {
+public interface ISysLogService{
 
 	/**
 	 * asd asd 

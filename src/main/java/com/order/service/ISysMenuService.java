@@ -1,12 +1,11 @@
 package com.order.service;
 
-import com.order.core.support.IBaseService;
 import com.order.entity.SysMenu;
 import com.order.vo.MenuVO;
 
 import java.util.List;
 
-public interface ISysMenuService extends IBaseService<SysMenu> {
+public interface ISysMenuService {
 
     Integer saveMenu(SysMenu sysMenu);
 

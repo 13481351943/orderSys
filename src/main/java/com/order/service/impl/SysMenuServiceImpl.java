@@ -1,8 +1,8 @@
 package com.order.service.impl;
 
 import com.order.common.util.UUIDUtil;
-import com.order.core.support.BaseServiceImpl;
-import com.order.entity.*;
+import com.order.entity.SysMenu;
+import com.order.entity.SysRoleMenuCriteria;
 import com.order.mapper.SysMenuMapper;
 import com.order.mapper.SysRoleMenuMapper;
 import com.order.mapper.SysUserRoleMapper;
@@ -19,7 +19,7 @@ import java.util.List;
 
 @Service
 @Slf4j
-public class SysMenuServiceImpl extends BaseServiceImpl<SysMenu>  implements ISysMenuService {
+public class SysMenuServiceImpl  implements ISysMenuService {
 
     @Autowired
     private SysMenuMapper sysMenuMapper;

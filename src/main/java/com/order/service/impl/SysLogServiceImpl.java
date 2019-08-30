@@ -1,7 +1,6 @@
 package com.order.service.impl;
 
 import com.order.core.support.BaseMapper;
-import com.order.core.support.BaseServiceImpl;
 import com.order.entity.SysLog;
 import com.order.mapper.SysLogMapper;
 import com.order.service.ISysLogService;
@@ -11,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SysLogServiceImpl extends BaseServiceImpl<SysLog> implements ISysLogService{
+public class SysLogServiceImpl implements ISysLogService{
 	
 	private static Logger logger = LoggerFactory.getLogger(SysLogServiceImpl.class);
 

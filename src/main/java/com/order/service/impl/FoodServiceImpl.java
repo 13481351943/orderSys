@@ -1,6 +1,5 @@
 package com.order.service.impl;
 
-import com.order.core.support.BaseServiceImpl;
 import com.order.entity.Food;
 import com.order.entity.FoodCriteria;
 import com.order.mapper.FoodMapper;
@@ -12,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class FoodServiceImpl extends BaseServiceImpl<Food> implements IFoodService {
+public class FoodServiceImpl implements IFoodService {
 
     @Autowired
     private FoodMapper foodMapper;

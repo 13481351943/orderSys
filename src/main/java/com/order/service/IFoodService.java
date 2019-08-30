@@ -1,11 +1,10 @@
 package com.order.service;
 
-import com.order.core.support.IBaseService;
 import com.order.entity.Food;
 
 import java.util.List;
 
-public interface IFoodService extends IBaseService<Food> {
+public interface IFoodService{
 
     Integer saveFood(Food food);
 

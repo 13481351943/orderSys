@@ -1,24 +1,23 @@
 package com.order.service.impl;
 
 import com.order.common.util.UUIDUtil;
-import com.order.core.support.BaseServiceImpl;
-import com.order.entity.*;
+import com.order.entity.SysRole;
+import com.order.entity.SysRoleMenu;
+import com.order.entity.SysRoleMenuCriteria;
+import com.order.entity.SysUserRoleCriteria;
 import com.order.mapper.SysRoleMapper;
 import com.order.mapper.SysRoleMenuMapper;
-import com.order.mapper.SysUserMapper;
 import com.order.mapper.SysUserRoleMapper;
 import com.order.service.ISysRoleService;
-import com.order.service.ISysUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.management.relation.Role;
 import java.util.List;
 
 @Service
 @Slf4j
-public class SysRoleServiceImpl extends BaseServiceImpl<SysRole>  implements ISysRoleService {
+public class SysRoleServiceImpl  implements ISysRoleService {
 
     @Autowired
     private SysRoleMapper sysRoleMapper;

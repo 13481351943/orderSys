@@ -1,11 +1,10 @@
 package com.order.service;
 
-import com.order.core.support.IBaseService;
 import com.order.entity.Category;
 
 import java.util.List;
 
-public interface ICategoryService extends IBaseService<Category> {
+public interface ICategoryService{
 
     List<Category> getAllCategory(String name, Integer type);
 

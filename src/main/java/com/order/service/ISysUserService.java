@@ -1,11 +1,10 @@
 package com.order.service;
 
-import com.order.core.support.IBaseService;
 import com.order.entity.SysUser;
 
 import java.util.List;
 
-public interface ISysUserService extends IBaseService<SysUser> {
+public interface ISysUserService {
 
     Integer removeUserRole(String userId, List<String> roleIds);
 

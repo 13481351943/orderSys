@@ -1,11 +1,10 @@
 package com.order.service;
 
-import com.order.core.support.IBaseService;
 import com.order.entity.SysRole;
 
 import java.util.List;
 
-public interface ISysRoleService extends IBaseService<SysRole> {
+public interface ISysRoleService {
 
     Integer saveRole(SysRole role);
 

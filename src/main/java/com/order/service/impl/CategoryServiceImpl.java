@@ -1,6 +1,5 @@
 package com.order.service.impl;
 
-import com.order.core.support.BaseServiceImpl;
 import com.order.entity.Category;
 import com.order.entity.CategoryCriteria;
 import com.order.mapper.CategoryMapper;
@@ -12,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class CategoryServiceImpl extends BaseServiceImpl<Category> implements ICategoryService {
+public class CategoryServiceImpl implements ICategoryService {
 
     @Autowired
     private CategoryMapper categoryMapper;
