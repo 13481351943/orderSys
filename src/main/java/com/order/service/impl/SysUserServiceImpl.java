@@ -3,6 +3,7 @@ package com.order.service.impl;
 import com.order.common.util.UUIDUtil;
 import com.order.core.support.BaseServiceImpl;
 import com.order.entity.SysUser;
+import com.order.entity.SysUserCriteria;
 import com.order.entity.SysUserRole;
 import com.order.entity.SysUserRoleCriteria;
 import com.order.mapper.SysUserMapper;
@@ -56,7 +57,12 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUser>  implements ISy
         return 1;
     }
 
-
+    @Override
+    public SysUser getSysUser(String name){
+        SysUserCriteria criteria = new SysUserCriteria();
+        criteria.createCriteria().andNameEqualTo(name);
+        return sysUserMapper.selectOneByExample(criteria);
+    }
 
 
 

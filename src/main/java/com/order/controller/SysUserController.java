@@ -1,5 +1,7 @@
 package com.order.controller;
 
+import com.order.common.util.RedisUtil;
+import com.order.common.util.UUIDUtil;
 import com.order.entity.SysUser;
 import com.order.service.ISysUserService;
 import io.swagger.annotations.Api;
@@ -16,6 +18,8 @@ public class SysUserController {
 
     @Autowired
     private ISysUserService sysUserService;
+    @Autowired
+    private RedisUtil redisUtil;
 
     @PostMapping("saveUser")
     public Integer saveUser(@RequestBody SysUser sysUser){
@@ -40,6 +44,19 @@ public class SysUserController {
         return sysUserService.removeUserRole(userId,roleIds);
     }
 
+    @PostMapping("/noauth/login")
+    public String login(String name,String password){
+        SysUser sysUser = sysUserService.getSysUser(name);
+        if(sysUser == null){
+            return "";
+        }
+        if(!password.equals(sysUser.getPassword())){
+            return "";
+        }
+        String key = UUIDUtil.generateID();
+        redisUtil.set(key, sysUser,30*60L);
+        return key;
+    }
 
 
 

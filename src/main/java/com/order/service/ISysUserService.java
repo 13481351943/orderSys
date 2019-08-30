@@ -17,5 +17,6 @@ public interface ISysUserService extends IBaseService<SysUser> {
 
     Integer setUserRole(String userId, List<String> roleIds);
 
+    SysUser getSysUser(String name);
 
 }
