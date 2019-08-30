@@ -4,8 +4,12 @@
   <resultMap id="BaseResultMap" type="com.order.entity.OrderMain">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="table_id" jdbcType="INTEGER" property="tableId" />
+    <result column="order_num" jdbcType="VARCHAR" property="orderNum" />
     <result column="price" jdbcType="DECIMAL" property="price" />
     <result column="real_price" jdbcType="DECIMAL" property="realPrice" />
+    <result column="discount_price" jdbcType="DECIMAL" property="discountPrice" />
+    <result column="pay_type" jdbcType="INTEGER" property="payType" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />

@@ -34,7 +34,12 @@ public class OrderSku implements Serializable {
     private String footName;
 
     /**
-     * 状态 0退菜 1正常 2加菜
+     * 数量
+     */
+    private Integer num;
+
+    /**
+     * 状态 0退菜 1正常 2加菜 3已完成
      */
     private Integer status;
 
@@ -142,18 +147,36 @@ public class OrderSku implements Serializable {
     }
 
     /**
-     * 获取状态 0退菜 1正常 2加菜
+     * 获取数量
      *
-     * @return status - 状态 0退菜 1正常 2加菜
+     * @return num - 数量
+     */
+    public Integer getNum() {
+        return num;
+    }
+
+    /**
+     * 设置数量
+     *
+     * @param num 数量
+     */
+    public void setNum(Integer num) {
+        this.num = num;
+    }
+
+    /**
+     * 获取状态 0退菜 1正常 2加菜 3已完成
+     *
+     * @return status - 状态 0退菜 1正常 2加菜 3已完成
      */
     public Integer getStatus() {
         return status;
     }
 
     /**
-     * 设置状态 0退菜 1正常 2加菜
+     * 设置状态 0退菜 1正常 2加菜 3已完成
      *
-     * @param status 状态 0退菜 1正常 2加菜
+     * @param status 状态 0退菜 1正常 2加菜 3已完成
      */
     public void setStatus(Integer status) {
         this.status = status;

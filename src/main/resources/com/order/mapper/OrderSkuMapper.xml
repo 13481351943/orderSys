@@ -6,6 +6,7 @@
     <result column="order_id" jdbcType="INTEGER" property="orderId" />
     <result column="foot_id" jdbcType="INTEGER" property="footId" />
     <result column="foot_name" jdbcType="VARCHAR" property="footName" />
+    <result column="num" jdbcType="INTEGER" property="num" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="price" jdbcType="DECIMAL" property="price" />
     <result column="real_price" jdbcType="DECIMAL" property="realPrice" />

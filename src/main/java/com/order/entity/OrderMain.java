@@ -22,6 +22,18 @@ public class OrderMain implements Serializable {
     private Integer userId;
 
     /**
+     * 桌位id
+     */
+    @Column(name = "table_id")
+    private Integer tableId;
+
+    /**
+     * 订单号
+     */
+    @Column(name = "order_num")
+    private String orderNum;
+
+    /**
      * 价格
      */
     private BigDecimal price;
@@ -31,6 +43,18 @@ public class OrderMain implements Serializable {
      */
     @Column(name = "real_price")
     private BigDecimal realPrice;
+
+    /**
+     * 折扣价
+     */
+    @Column(name = "discount_price")
+    private BigDecimal discountPrice;
+
+    /**
+     * 支付方式 0现金 1微信 2支付宝
+     */
+    @Column(name = "pay_type")
+    private Integer payType;
 
     /**
      * 状态 0异常 1正常
@@ -94,6 +118,42 @@ public class OrderMain implements Serializable {
     }
 
     /**
+     * 获取桌位id
+     *
+     * @return table_id - 桌位id
+     */
+    public Integer getTableId() {
+        return tableId;
+    }
+
+    /**
+     * 设置桌位id
+     *
+     * @param tableId 桌位id
+     */
+    public void setTableId(Integer tableId) {
+        this.tableId = tableId;
+    }
+
+    /**
+     * 获取订单号
+     *
+     * @return order_num - 订单号
+     */
+    public String getOrderNum() {
+        return orderNum;
+    }
+
+    /**
+     * 设置订单号
+     *
+     * @param orderNum 订单号
+     */
+    public void setOrderNum(String orderNum) {
+        this.orderNum = orderNum == null ? null : orderNum.trim();
+    }
+
+    /**
      * 获取价格
      *
      * @return price - 价格
@@ -127,6 +187,42 @@ public class OrderMain implements Serializable {
      */
     public void setRealPrice(BigDecimal realPrice) {
         this.realPrice = realPrice;
+    }
+
+    /**
+     * 获取折扣价
+     *
+     * @return discount_price - 折扣价
+     */
+    public BigDecimal getDiscountPrice() {
+        return discountPrice;
+    }
+
+    /**
+     * 设置折扣价
+     *
+     * @param discountPrice 折扣价
+     */
+    public void setDiscountPrice(BigDecimal discountPrice) {
+        this.discountPrice = discountPrice;
+    }
+
+    /**
+     * 获取支付方式 0现金 1微信 2支付宝
+     *
+     * @return pay_type - 支付方式 0现金 1微信 2支付宝
+     */
+    public Integer getPayType() {
+        return payType;
+    }
+
+    /**
+     * 设置支付方式 0现金 1微信 2支付宝
+     *
+     * @param payType 支付方式 0现金 1微信 2支付宝
+     */
+    public void setPayType(Integer payType) {
+        this.payType = payType;
     }
 
     /**
