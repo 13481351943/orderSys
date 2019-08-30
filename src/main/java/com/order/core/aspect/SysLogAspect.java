@@ -87,7 +87,7 @@ public class SysLogAspect {
 
 		sysLog.setTime(time);
 		//保存系统日志
-		sysLogService.insertSelective(sysLog);
+		sysLogService.save(sysLog);
 	}
 	
 	private SysLog createSystemLog(String userName, String methodName, String description, String name) {

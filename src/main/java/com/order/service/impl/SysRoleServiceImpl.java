@@ -1,5 +1,6 @@
 package com.order.service.impl;
 
+import com.order.common.util.UUIDUtil;
 import com.order.core.support.BaseServiceImpl;
 import com.order.entity.*;
 import com.order.mapper.SysRoleMapper;
@@ -30,6 +31,7 @@ public class SysRoleServiceImpl extends BaseServiceImpl<SysRole>  implements ISy
 
     @Override
     public Integer saveRole(SysRole role){
+        role.setRoleId(UUIDUtil.generateID());
         return sysRoleMapper.insertSelective(role);
     }
 
@@ -66,6 +68,7 @@ public class SysRoleServiceImpl extends BaseServiceImpl<SysRole>  implements ISy
         for(String menuId : menuIds){
             //todo 这里应该检查一下 是否存在
             SysRoleMenu roleMenu = new SysRoleMenu();
+            roleMenu.setId(UUIDUtil.generateID());
             roleMenu.setMenuId(menuId);
             roleMenu.setRoleId(roleId);
             sysRoleMenuMapper.insertSelective(roleMenu);

@@ -37,7 +37,8 @@ public class SysRoleController extends BaseController {
 	}
 
 	@PostMapping("getSysRoleByUserId")
-	public List<SysRole> getSysRoleByUserId(String userId){
+	public List<SysRole> getSysRoleByUserId(){
+		String userId = userUtils.getSysUser().getUserId();
 		return sysRoleService.getSysRoleByUserId(userId);
 	}
 

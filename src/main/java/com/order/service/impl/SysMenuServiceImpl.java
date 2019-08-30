@@ -1,5 +1,6 @@
 package com.order.service.impl;
 
+import com.order.common.util.UUIDUtil;
 import com.order.core.support.BaseServiceImpl;
 import com.order.entity.*;
 import com.order.mapper.SysMenuMapper;
@@ -30,6 +31,7 @@ public class SysMenuServiceImpl extends BaseServiceImpl<SysMenu>  implements ISy
     @Override
     public Integer saveMenu(SysMenu sysMenu){
         log.info("保存菜单目录 参数为：{}",sysMenu);
+        sysMenu.setMenuId(UUIDUtil.generateID());
         return sysMenuMapper.insert(sysMenu);
     }
 
