@@ -32,6 +32,10 @@ public class CommonSSIDFilter extends OncePerRequestFilter{
 			throws ServletException, IOException {
 		String key = request.getHeader("token");
 		SysUser user = userUtils.getSysUserByRedis(key);
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		response.addHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+		response.setHeader("Access-Control-Allow-Headers", "x-requested-with");
+		response.addHeader("Access-Control-Max-Age", "1800");
 		if(user == null) {
 			returnError(response);
 			return;

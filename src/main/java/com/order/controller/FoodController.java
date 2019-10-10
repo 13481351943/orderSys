@@ -38,12 +38,10 @@ public class FoodController {
         return foodService.updateFoodStatusOver(foodId);
     }
 
-    @PostMapping("listFood")
+    @PostMapping("/listFood")
     public List<Food> listFood(@RequestParam(value = "categoryId",required = false) Integer categoryId,
                                @RequestParam(value = "name",required = false) String name,
                                @RequestParam(value = "sales",required = false) Integer sales){
         return foodService.listFood(categoryId,name,sales);
     }
-
-
 }
