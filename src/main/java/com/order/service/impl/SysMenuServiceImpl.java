@@ -30,20 +30,20 @@ public class SysMenuServiceImpl  implements ISysMenuService {
 
     @Override
     public Integer saveMenu(SysMenu sysMenu){
-        log.info("保存菜单目录 参数为：{}",sysMenu);
+//        log.info("保存菜单目录 参数为：{}",sysMenu);
         sysMenu.setMenuId(UUIDUtil.generateID());
         return sysMenuMapper.insert(sysMenu);
     }
 
     @Override
     public Integer updateMenu(SysMenu sysMenu){
-        log.info("修改菜单目录 参数为：{}",sysMenu);
+//        log.info("修改菜单目录 参数为：{}",sysMenu);
         return sysMenuMapper.updateByPrimaryKey(sysMenu);
     }
 
     @Override
     public Integer delMenu(String id){
-        log.info("删除菜单目录 参数为：{}",id);
+//        log.info("删除菜单目录 参数为：{}",id);
         SysRoleMenuCriteria criteria = new SysRoleMenuCriteria();
         criteria.createCriteria().andMenuIdEqualTo(id);
         sysRoleMenuMapper.deleteByExample(criteria);

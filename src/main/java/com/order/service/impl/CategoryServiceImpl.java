@@ -2,6 +2,7 @@ package com.order.service.impl;
 
 import com.order.entity.Category;
 import com.order.entity.CategoryCriteria;
+import com.order.entity.Food;
 import com.order.mapper.CategoryMapper;
 import com.order.service.ICategoryService;
 import org.apache.commons.lang3.StringUtils;
@@ -18,6 +19,7 @@ public class CategoryServiceImpl implements ICategoryService {
 
     @Override
     public Integer saveCate(Category category){
+    	
         return categoryMapper.insertSelective(category);
     }
 
@@ -27,7 +29,7 @@ public class CategoryServiceImpl implements ICategoryService {
     }
 
     @Override
-    public Integer delCate(String id){
+    public Integer delCate(Integer id){
         return categoryMapper.deleteByPrimaryKey(id);
     }
 
@@ -43,6 +45,16 @@ public class CategoryServiceImpl implements ICategoryService {
         categoryCriteria.setOrderByClause("sort");
         return categoryMapper.selectByExample(categoryCriteria);
     }
+
+	@Override
+	public Integer updateCategoryStatus(Integer categoryId, Integer state) {
+		// TODO Auto-generated method stub
+		Category category = new Category();
+		category.setId(categoryId);
+		category.setStatus(state);
+        return categoryMapper.updateByPrimaryKeySelective(category);
+		
+	}
 
 
 

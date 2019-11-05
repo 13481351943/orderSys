@@ -1,0 +1,150 @@
+2019-10-28 17:14:43.367 [main] INFO  com.order.OrderSysApplication -
+				Starting OrderSysApplication v0.0.1-SNAPSHOT on DESKTOP-LCESB4J with PID 15776 (D:\work\eclipseWork\newdongjin\orderSys\target\orderSys-0.0.1-SNAPSHOT.jar started by Administrator in D:\work\eclipseWork\newdongjin\orderSys\target)
+2019-10-28 17:14:43.382 [main] INFO  com.order.OrderSysApplication -
+				No active profile set, falling back to default profiles: default
+2019-10-28 17:14:44.757 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-10-28 17:14:44.773 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-28 17:14:44.835 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Finished Spring Data repository scanning in 47ms. Found 0 repository interfaces.
+2019-10-28 17:14:45.429 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$77682302] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-28 17:14:45.632 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'redisConfig' of type [com.order.config.RedisConfig$$EnhancerBySpringCGLIB$$83ace265] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-28 17:14:46.819 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+				Tomcat initialized with port(s): 48081 (http)
+2019-10-28 17:14:46.850 [main] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Initializing ProtocolHandler ["http-nio-48081"]
+2019-10-28 17:14:46.881 [main] INFO  org.apache.catalina.core.StandardService -
+				Starting service [Tomcat]
+2019-10-28 17:14:46.881 [main] INFO  org.apache.catalina.core.StandardEngine -
+				Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-10-28 17:14:46.897 [main] INFO  org.apache.catalina.core.AprLifecycleListener -
+				The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk-12.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\Java\jdk-12.0.1\bin\;D:\工具\Git\cmd;D:\工具\openssl\bin;D:\Android\SDK\platform-tools;D:\Android\SDK\tools???????;C:\WINDOWS\System32\OpenSSH\;D:\work\android-ndk-r20;D:\Go\bin;D:\Program Files\nodejs\;D:\Java\apache-maven-3.6.2\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Administrator\go\bin;D:\Program Files\JetBrains\GoLand 2019.2.1\bin;;D:\Program Files\nodejs\node_global;C:\Users\Administrator\AppData\Roaming\npm;.]
+2019-10-28 17:14:47.006 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+				Initializing Spring embedded WebApplicationContext
+2019-10-28 17:14:47.006 [main] INFO  org.springframework.web.context.ContextLoader -
+				Root WebApplicationContext: initialization completed in 3561 ms
+2019-10-28 17:14:49.256 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping -
+				Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-10-28 17:14:49.490 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+				Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-28 17:14:49.615 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping -
+				Adding welcome page: class path resource [static/index.html]
+2019-10-28 17:14:50.085 [main] INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration -
+				
+
+Using generated security password: 1f4062c5-35f4-4a73-825e-db139daad053
+
+2019-10-28 17:14:50.226 [main] INFO  o.s.security.web.DefaultSecurityFilterChain -
+				Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6dd1c3ed, org.springframework.security.web.context.SecurityContextPersistenceFilter@71a06021, org.springframework.security.web.header.HeaderWriterFilter@7aac8884, org.springframework.security.web.authentication.logout.LogoutFilter@5bc28f40, com.order.config.security.CommonSSIDFilter@3044e9c7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6edcad64, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@623dcf2a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@22a6e998, org.springframework.security.web.session.SessionManagementFilter@5df778c3, org.springframework.security.web.access.ExceptionTranslationFilter@3c5dbdf8]
+2019-10-28 17:14:50.320 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper -
+				Context refreshed
+2019-10-28 17:14:50.335 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper -
+				Found 1 custom documentation plugin(s)
+2019-10-28 17:14:50.382 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner -
+				Scanning for api listing references
+2019-10-28 17:14:50.694 [main] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader -
+				Trying to infer dataType java.util.List<java.lang.String>
+2019-10-28 17:14:50.710 [main] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader -
+				Trying to infer dataType java.util.List<java.lang.String>
+2019-10-28 17:14:50.741 [main] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader -
+				Trying to infer dataType java.util.List<java.lang.String>
+2019-10-28 17:14:50.757 [main] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader -
+				Trying to infer dataType java.util.List<java.lang.String>
+2019-10-28 17:14:50.913 [container-1] INFO  io.lettuce.core.EpollProvider -
+				Starting without optional epoll library
+2019-10-28 17:14:50.913 [container-1] INFO  io.lettuce.core.KqueueProvider -
+				Starting without optional kqueue library
+2019-10-28 17:14:52.663 [main] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Starting ProtocolHandler ["http-nio-48081"]
+2019-10-28 17:14:52.694 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+				Tomcat started on port(s): 48081 (http) with context path ''
+2019-10-28 17:14:52.694 [main] INFO  com.order.OrderSysApplication -
+				Started OrderSysApplication in 10.171 seconds (JVM running for 10.752)
+2019-10-28 17:17:15.804 [http-nio-48081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+				Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-28 17:17:15.804 [http-nio-48081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet -
+				Initializing Servlet 'dispatcherServlet'
+2019-10-28 17:17:15.820 [http-nio-48081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet -
+				Completed initialization in 16 ms
+2019-10-28 17:17:43.585 [http-nio-48081-exec-6] ERROR com.alibaba.druid.pool.DruidDataSource -
+				testWhileIdle is true, validationQuery not set
+2019-10-28 17:17:43.601 [http-nio-48081-exec-6] INFO  com.alibaba.druid.pool.DruidDataSource -
+				{dataSource-1} inited
+2019-10-28 21:29:31.361 [main] INFO  com.order.OrderSysApplication -
+				Starting OrderSysApplication v0.0.1-SNAPSHOT on DESKTOP-LCESB4J with PID 16724 (D:\work\eclipseWork\newdongjin\orderSys\target\orderSys-0.0.1-SNAPSHOT.jar started by Administrator in D:\work\eclipseWork\newdongjin\orderSys\target)
+2019-10-28 21:29:31.384 [main] INFO  com.order.OrderSysApplication -
+				No active profile set, falling back to default profiles: default
+2019-10-28 21:29:34.666 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-10-28 21:29:34.678 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-28 21:29:34.929 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate -
+				Finished Spring Data repository scanning in 208ms. Found 0 repository interfaces.
+2019-10-28 21:29:36.159 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f62ec282] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-28 21:29:36.526 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'redisConfig' of type [com.order.config.RedisConfig$$EnhancerBySpringCGLIB$$27381e5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-28 21:29:38.775 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+				Tomcat initialized with port(s): 48081 (http)
+2019-10-28 21:29:38.859 [main] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Initializing ProtocolHandler ["http-nio-48081"]
+2019-10-28 21:29:38.915 [main] INFO  org.apache.catalina.core.StandardService -
+				Starting service [Tomcat]
+2019-10-28 21:29:38.918 [main] INFO  org.apache.catalina.core.StandardEngine -
+				Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-10-28 21:29:38.947 [main] INFO  org.apache.catalina.core.AprLifecycleListener -
+				The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk-12.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\Java\jdk-12.0.1\bin\;D:\工具\Git\cmd;D:\工具\openssl\bin;D:\Android\SDK\platform-tools;D:\Android\SDK\tools???????;C:\WINDOWS\System32\OpenSSH\;D:\work\android-ndk-r20;D:\Go\bin;D:\Program Files\nodejs\;D:\Java\apache-maven-3.6.2\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Administrator\go\bin;D:\Program Files\JetBrains\GoLand 2019.2.1\bin;;D:\Program Files\nodejs\node_global;C:\Users\Administrator\AppData\Roaming\npm;.]
+2019-10-28 21:29:39.156 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+				Initializing Spring embedded WebApplicationContext
+2019-10-28 21:29:39.159 [main] INFO  org.springframework.web.context.ContextLoader -
+				Root WebApplicationContext: initialization completed in 7605 ms
+2019-10-28 21:29:43.785 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping -
+				Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-10-28 21:29:44.174 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor -
+				Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-28 21:29:44.413 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping -
+				Adding welcome page: class path resource [static/index.html]
+2019-10-28 21:29:45.273 [main] INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration -
+				
+
+Using generated security password: 824491c8-84b1-47ad-8365-5dc3ec539fe0
+
+2019-10-28 21:29:45.473 [main] INFO  o.s.security.web.DefaultSecurityFilterChain -
+				Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@646c0a67, org.springframework.security.web.context.SecurityContextPersistenceFilter@a66e580, org.springframework.security.web.header.HeaderWriterFilter@255eaa6b, org.springframework.security.web.authentication.logout.LogoutFilter@2eae4349, com.order.config.security.CommonSSIDFilter@19f040ba, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@cdb2d95, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@895416d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3804a9a8, org.springframework.security.web.session.SessionManagementFilter@352c44a8, org.springframework.security.web.access.ExceptionTranslationFilter@60bbacfc]
+2019-10-28 21:29:45.624 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper -
+				Context refreshed
+2019-10-28 21:29:45.672 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper -
+				Found 1 custom documentation plugin(s)
+2019-10-28 21:29:45.739 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner -
+				Scanning for api listing references
+2019-10-28 21:29:46.343 [main] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader -
+				Trying to infer dataType java.util.List<java.lang.String>
+2019-10-28 21:29:46.373 [main] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader -
+				Trying to infer dataType java.util.List<java.lang.String>
+2019-10-28 21:29:46.406 [main] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader -
+				Trying to infer dataType java.util.List<java.lang.String>
+2019-10-28 21:29:46.428 [main] WARN  s.d.s.w.readers.parameter.ParameterDataTypeReader -
+				Trying to infer dataType java.util.List<java.lang.String>
+2019-10-28 21:29:46.690 [container-1] INFO  io.lettuce.core.EpollProvider -
+				Starting without optional epoll library
+2019-10-28 21:29:46.701 [container-1] INFO  io.lettuce.core.KqueueProvider -
+				Starting without optional kqueue library
+2019-10-28 21:29:49.905 [main] INFO  org.apache.coyote.http11.Http11NioProtocol -
+				Starting ProtocolHandler ["http-nio-48081"]
+2019-10-28 21:29:49.956 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer -
+				Tomcat started on port(s): 48081 (http) with context path ''
+2019-10-28 21:29:49.973 [main] INFO  com.order.OrderSysApplication -
+				Started OrderSysApplication in 20.4 seconds (JVM running for 21.414)
+2019-10-28 21:30:37.258 [http-nio-48081-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] -
+				Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-28 21:30:37.260 [http-nio-48081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet -
+				Initializing Servlet 'dispatcherServlet'
+2019-10-28 21:30:37.283 [http-nio-48081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet -
+				Completed initialization in 20 ms
+2019-10-28 21:31:18.877 [http-nio-48081-exec-2] ERROR com.alibaba.druid.pool.DruidDataSource -
+				testWhileIdle is true, validationQuery not set
+2019-10-28 21:31:18.896 [http-nio-48081-exec-2] INFO  com.alibaba.druid.pool.DruidDataSource -
+				{dataSource-1} inited

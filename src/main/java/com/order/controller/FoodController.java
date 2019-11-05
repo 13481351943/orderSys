@@ -1,7 +1,10 @@
 package com.order.controller;
 
+import com.order.common.util.RedisUtil;
 import com.order.entity.Food;
+import com.order.entity.SysUser;
 import com.order.service.IFoodService;
+import com.order.common.util.*;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,9 +20,15 @@ public class FoodController {
 
     @Autowired
     private IFoodService foodService;
-
+    
+    @Autowired
+    private UserUtils userUtils;
+    
     @PostMapping("saveFood")
-    public Integer saveFood(@RequestBody  Food food){
+    public Integer saveFood(@RequestBody  Food food  ){
+    	
+    	SysUser sysUser = userUtils.getSysUser();
+    	food.setCreateBy(sysUser.getName());
         return  foodService.saveFood(food);
     }
 
@@ -31,11 +40,12 @@ public class FoodController {
     @PostMapping("delFood")
     public Integer delFood(Integer foodId){
         return  foodService.delFood(foodId);
+        
     }
 
     @PostMapping("updateFoodStatusOver")
-    public Integer updateFoodStatusOver(Integer foodId){
-        return foodService.updateFoodStatusOver(foodId);
+    public Integer updateFoodStatusOver(Integer foodId,Integer state){
+        return foodService.updateFoodStatusOver(foodId ,state);
     }
 
     @PostMapping("/listFood")

@@ -39,7 +39,7 @@ public class OrderSku implements Serializable {
     private Integer num;
 
     /**
-     * 状态 0退菜 1正常 2加菜 3已完成
+     * 状态 0：退菜 1：正常 2：加菜 3：已上菜 4：异常
      */
     private Integer status;
 
@@ -71,10 +71,24 @@ public class OrderSku implements Serializable {
      */
     @Column(name = "create_by")
     private String createBy;
+    
+    /**
+     * 备注
+     */
+    private String remark;
 
     private static final long serialVersionUID = 1L;
 
-    /**
+    
+    public String getRemark() {
+		return remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+
+	/**
      * 获取id
      *
      * @return id - id

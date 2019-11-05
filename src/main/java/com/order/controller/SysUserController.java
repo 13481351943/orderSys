@@ -47,6 +47,7 @@ public class SysUserController {
     @PostMapping("/noauth/login")
     public String login(String name,String password){
         SysUser sysUser = sysUserService.getSysUser(name);
+        System.out.println("登录对象："+sysUser);
         if(sysUser == null){
             return "";
         }
@@ -57,6 +58,8 @@ public class SysUserController {
         redisUtil.set(key, sysUser,30*60L);
         return key;
     }
+    
+    
 
 
 

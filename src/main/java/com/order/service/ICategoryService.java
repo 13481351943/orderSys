@@ -8,9 +8,11 @@ public interface ICategoryService{
 
     List<Category> getAllCategory(String name, Integer type);
 
-    Integer delCate(String id);
+    Integer delCate(Integer id);
 
     Integer updateCate(Category category);
 
     Integer saveCate(Category category);
+    
+    Integer updateCategoryStatus(Integer categoryId, Integer state);
 }

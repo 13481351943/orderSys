@@ -12,7 +12,7 @@ public interface IFoodService{
 
     Integer delFood(Integer foodId);
 
-    Integer updateFoodStatusOver(Integer foodId);
+    Integer updateFoodStatusOver(Integer foodId ,Integer state);
 
     List<Food> listFood(Integer categoryId, String name, Integer sales);
 

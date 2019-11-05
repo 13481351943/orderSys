@@ -1,5 +1,6 @@
 package com.order.controller;
 
+import com.order.common.util.UserUtils;
 import com.order.entity.Category;
 import com.order.service.ICategoryService;
 import io.swagger.annotations.Api;
@@ -18,18 +19,27 @@ public class CategoryController {
     @Autowired
     private ICategoryService categoryService;
 
+    @Autowired
+    private UserUtils userUtils;
+    
     @PostMapping("saveCate")
     public Integer saveCate(@RequestBody  Category category){
+    	category.setCreateBy(userUtils.getSysUser().getName());
         return categoryService.saveCate(category);
     }
 
+    @PostMapping("updateCategoryStatus")
+    public Integer updateCategoryStatus(Integer categoryId,Integer state) {
+    	return categoryService.updateCategoryStatus(categoryId,state);
+    }
+    
     @PostMapping("updateCate")
     public Integer updateCate(@RequestBody  Category category){
         return categoryService.updateCate(category);
     }
 
     @PostMapping("delCate")
-    public Integer delCate(String categoryId){
+    public Integer delCate(Integer categoryId){
         return categoryService.delCate(categoryId);
     }
 

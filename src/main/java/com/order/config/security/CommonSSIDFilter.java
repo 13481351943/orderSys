@@ -31,10 +31,11 @@ public class CommonSSIDFilter extends OncePerRequestFilter{
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
 		String key = request.getHeader("token");
+		System.out.println("token:"+key);
 		SysUser user = userUtils.getSysUserByRedis(key);
 		response.addHeader("Access-Control-Allow-Origin", "*");
 		response.addHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-		response.setHeader("Access-Control-Allow-Headers", "x-requested-with");
+		response.setHeader("Access-Control-Allow-Headers", "Content-Type,x-requested-with, token");
 		response.addHeader("Access-Control-Max-Age", "1800");
 		if(user == null) {
 			returnError(response);
@@ -74,6 +75,8 @@ public class CommonSSIDFilter extends OncePerRequestFilter{
 		if(StringUtils.contains(url, ".ico"))
 			return true;
 		if(StringUtils.contains(url, "/api"))
+			return true;
+		if(StringUtils.contains(url, ".html"))
 			return true;
 		//不需验证资源
 		if(StringUtils.contains(url, "/noauth/"))

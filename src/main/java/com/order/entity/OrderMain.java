@@ -3,6 +3,10 @@ package com.order.entity;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -12,14 +16,14 @@ public class OrderMain implements Serializable {
     /**
      * id
      */
-    @Id
+	 @Id
     private Integer id;
 
     /**
      * 用户id
      */
     @Column(name = "user_id")
-    private Integer userId;
+    private String userId;
 
     /**
      * 桌位id
@@ -81,7 +85,15 @@ public class OrderMain implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    /**
+    @Override
+	public String toString() {
+		return "OrderMain [id=" + id + ", userId=" + userId + ", tableId=" + tableId + ", orderNum=" + orderNum
+				+ ", price=" + price + ", realPrice=" + realPrice + ", discountPrice=" + discountPrice + ", payType="
+				+ payType + ", status=" + status + ", createTime=" + createTime + ", updateTime=" + updateTime
+				+ ", createBy=" + createBy + "]";
+	}
+
+	/**
      * 获取id
      *
      * @return id - id
@@ -104,7 +116,7 @@ public class OrderMain implements Serializable {
      *
      * @return user_id - 用户id
      */
-    public Integer getUserId() {
+    public String getUserId() {
         return userId;
     }
 
@@ -113,7 +125,7 @@ public class OrderMain implements Serializable {
      *
      * @param userId 用户id
      */
-    public void setUserId(Integer userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 

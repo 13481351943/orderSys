@@ -3,12 +3,13 @@ package com.order.vo;
 import com.order.entity.OrderSku;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
 @Data
-public class OrderVO {
+public class OrderVO implements Serializable {
     /**
      * id
      */
@@ -17,7 +18,7 @@ public class OrderVO {
     /**
      * 用户id
      */
-    private Integer userId;
+    private String userId;
 
     /**
      * 桌位id
@@ -69,5 +70,86 @@ public class OrderVO {
      */
     private String createBy;
 
-    private List<OrderSku> list;
+    
+    
+    
+    public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+	public Integer getTableId() {
+		return tableId;
+	}
+	public void setTableId(Integer tableId) {
+		this.tableId = tableId;
+	}
+	public String getOrderNum() {
+		return orderNum;
+	}
+	public void setOrderNum(String orderNum) {
+		this.orderNum = orderNum;
+	}
+	public BigDecimal getPrice() {
+		return price;
+	}
+	public void setPrice(BigDecimal price) {
+		this.price = price;
+	}
+	public BigDecimal getRealPrice() {
+		return realPrice;
+	}
+	public void setRealPrice(BigDecimal realPrice) {
+		this.realPrice = realPrice;
+	}
+	public BigDecimal getDiscountPrice() {
+		return discountPrice;
+	}
+	public void setDiscountPrice(BigDecimal discountPrice) {
+		this.discountPrice = discountPrice;
+	}
+	public Integer getPayType() {
+		return payType;
+	}
+	public void setPayType(Integer payType) {
+		this.payType = payType;
+	}
+	public Integer getStatus() {
+		return status;
+	}
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+	public Date getCreateTime() {
+		return createTime;
+	}
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+	public Date getUpdateTime() {
+		return updateTime;
+	}
+	public void setUpdateTime(Date updateTime) {
+		this.updateTime = updateTime;
+	}
+	public String getCreateBy() {
+		return createBy;
+	}
+	public void setCreateBy(String createBy) {
+		this.createBy = createBy;
+	}
+	public List<OrderSku> getList() {
+		return list;
+	}
+	private List<OrderSku> list;
+    public void setList(List<OrderSku> l) {
+    	this.list = l;
+    }
 }

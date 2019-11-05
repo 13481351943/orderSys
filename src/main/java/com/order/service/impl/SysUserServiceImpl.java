@@ -58,6 +58,8 @@ public class SysUserServiceImpl implements ISysUserService {
 
     @Override
     public SysUser getSysUser(String name){
+//    	log.info("查询用户名为：{}",name);
+    	System.out.println("查询用户名为：{}"+name);
         SysUserCriteria criteria = new SysUserCriteria();
         criteria.createCriteria().andNameEqualTo(name);
         return sysUserMapper.selectOneByExample(criteria);

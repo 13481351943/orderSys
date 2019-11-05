@@ -34,15 +34,15 @@ public class FoodServiceImpl implements IFoodService {
     /**
      * 功能描述: 手动售罄
      * @author: huangbin
-     * @param: [foodId]
+     * @param: [foodId , state] 
      * @Return: java.lang.Integer
      * @Date: 2019/8/30 15:11
      */
     @Override
-    public Integer updateFoodStatusOver(Integer foodId){
+    public Integer updateFoodStatusOver(Integer foodId ,Integer state){
         Food food = new Food();
         food.setId(foodId);
-        food.setStatus(2);
+        food.setStatus(state);
         return foodMapper.updateByPrimaryKeySelective(food);
     }
 
