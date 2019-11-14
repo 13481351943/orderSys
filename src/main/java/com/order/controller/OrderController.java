@@ -4,6 +4,8 @@ import com.order.entity.*;
 import com.order.common.util.*;
 import com.order.vo.*;
 
+import java.io.File;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -11,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.order.service.IOrderService;
 
@@ -46,8 +49,6 @@ public class OrderController {
 		
 		return orderService.saveOrderFood(userUtils.getSysUser(),orderVO);
 	}
-	
-	
 	
 	@PostMapping("listOrderMain")
 	public List<OrderMain> listOrderMain(Integer userId,Integer tableId,Integer status){
@@ -94,5 +95,26 @@ public class OrderController {
 	@PostMapping("findMainOrderInfo")
 	public List<CookingInfoVO> findMainOrderInfo(){
 		return orderService.findMainOrderInfo();
+	}
+	
+	@PostMapping("/upload")
+	public String upload(@RequestBody MultipartFile file) {
+		if(file.isEmpty()) {
+			return "上传失败，请选择文件";
+		}
+		String fileName = file.getOriginalFilename();
+		String filePath = "/Users/itinypocket/workspace/temp/";
+		File dest = new File(filePath +fileName);
+		try {
+			file.transferTo(dest);
+			return "上传成功";
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "上传失败";
 	}
 }

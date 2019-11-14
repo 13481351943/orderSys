@@ -10,7 +10,10 @@ import tk.mybatis.mapper.common.Mapper;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 public interface OrderSkuMapper extends BaseMapper<OrderSku> {
 	List<CookingInfoVO> findMainOrderInfo();
+	int getMainOrderPrice(Map map);
+	int updateMainOrderPrice(Map map);
 }

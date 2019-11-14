@@ -23,9 +23,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
+
 
 @Service
 public class OrderServiceImpl implements IOrderService{
@@ -59,7 +58,7 @@ public class OrderServiceImpl implements IOrderService{
         OrderMain orderMain = new OrderMain();
         orderMain.setId(orderId);
         orderMain = orderMainMapper.selectByPrimaryKey(orderMain);
-        System.out.println(orderMain.toString());
+//        System.out.println(orderMain.toString());
         BeanUtils.copyProperties(orderMain,vo);
 
         OrderSkuCriteria criteria = new OrderSkuCriteria();
@@ -218,11 +217,15 @@ public class OrderServiceImpl implements IOrderService{
 		OrderSku orderSku = new OrderSku();
 		orderSku.setId(orderSkuId);
 		orderSku.setStatus(orderSkuState);
-        return orderSkuMapper.updateByPrimaryKeySelective(orderSku);		
+		int backe = orderSkuMapper.updateByPrimaryKeySelective(orderSku);
+		if(orderSkuState ==0) {
+			//退菜，从新计算价格
+			orderSku = orderSkuMapper.selectByPrimaryKey(orderSku.getId());
+			return setOrderMainPrice(orderSku.getOrderId());
+		}	
+        return backe;
 	}
 
-
-	
 	@Override
 	public CookingOrderMain listOrderMainNeedCooking() {
 		OrderMainCriteria criteria = new OrderMainCriteria();
@@ -287,8 +290,6 @@ public class OrderServiceImpl implements IOrderService{
 		cookingCriteria.createCriteria().andStatusIn(status).andFootIdIn(cookingFoodId);
 		cookingOrder.setCookingList(orderSkuMapper.selectByExample(cookingCriteria));
 		
-		
-		
 		return cookingOrder ;
 	}
 
@@ -297,6 +298,16 @@ public class OrderServiceImpl implements IOrderService{
 	public List<CookingInfoVO> findMainOrderInfo() {
 		// TODO Auto-generated method stub
 		return orderSkuMapper.findMainOrderInfo();
+	}
+	/**
+	 * 根据skuOrderId 从新计算该单的总价
+	 * @param orderId
+	 */
+	private int setOrderMainPrice(Integer orderId) {
+		Map<String,Object> map= new HashMap<String,Object>();  
+		map.put("orderId",orderId);  
+		return orderSkuMapper.updateMainOrderPrice(map);
+		
 	}
 
 

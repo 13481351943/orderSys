@@ -34,4 +34,18 @@
     AND p3.id = p2.foot_id
     AND p4.id = p3.category_id
   </select>
+  
+  <resultMap type="Int" id="figureUpPriceResultMap">
+  		<result column="price" jdbcType="DECIMAL" property="price" />
+  </resultMap>
+  
+  <select id="getMainOrderPrice" parameterType="Map" resultType="Int">
+  	     SELECT SUM(price*num) FROM  order_sku WHERE STATUS IN (1,2,3) AND order_id = #{orderId}
+  </select>
+  
+  <update id="updateMainOrderPrice" parameterType="Map" >
+      UPDATE order_main SET price = ( SELECT SUM(price*num) FROM  order_sku WHERE STATUS IN (1,2,3) AND order_id = #{orderId}) WHERE id = #{orderId}
+  </update>
+  
+  
 </mapper>

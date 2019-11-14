@@ -285,4 +285,13 @@ public class OrderSku implements Serializable {
     public void setCreateBy(String createBy) {
         this.createBy = createBy == null ? null : createBy.trim();
     }
+
+	@Override
+	public String toString() {
+		return "OrderSku [id=" + id + ", orderId=" + orderId + ", footId=" + footId + ", footName=" + footName
+				+ ", num=" + num + ", status=" + status + ", price=" + price + ", realPrice=" + realPrice
+				+ ", createTime=" + createTime + ", updateTime=" + updateTime + ", createBy=" + createBy + ", remark="
+				+ remark + "]";
+	}
+    
 }
